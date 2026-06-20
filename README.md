@@ -8,11 +8,8 @@ baseline, a passenger-priority heuristic, and a mathematically optimal MILP — 
 cost, passenger walking distance, terminal-zone fit, and robustness to delays.
 
 It ships with an interactive **Plotly Dash** dashboard so the results can be explored
-in the browser.
-
-> ⚠️ **Data note:** the case is a fully **synthetic**, Tirana-inspired planning scenario
-> (36 flights, 11 stands, three daily traffic banks). It uses *no* confidential airport
-> data — which keeps every result reproducible from a single random seed.
+in the browser — including a **"Bring Your Own Airport"** tab where you can upload your
+own flight and gate tables (CSV) and re-run the full optimization for any airport.
 
 ---
 
