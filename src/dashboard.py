@@ -418,10 +418,73 @@ def _gates_template() -> pd.DataFrame:
     return gates[REQUIRED_GATE_COLS].copy()
 
 
-def _parse_csv(contents: str) -> pd.DataFrame:
-    """Decode a dcc.Upload base64 payload into a DataFrame."""
+def _parse_upload(contents: str, filename: str | None = None) -> pd.DataFrame:
+    """Decode a dcc.Upload base64 payload (.xlsx or .csv) into a DataFrame."""
     _, b64 = contents.split(",", 1)
-    return pd.read_csv(io.BytesIO(base64.b64decode(b64)))
+    raw = base64.b64decode(b64)
+    name = (filename or "").lower()
+    if name.endswith((".xlsx", ".xls")):
+        return pd.read_excel(io.BytesIO(raw))
+    # Fall back to CSV; sniff ';' vs ',' so Excel-localised exports still parse.
+    text = raw.decode("utf-8-sig", errors="replace")
+    sep = ";" if (text.count(";") > text.count(",")) else ","
+    return pd.read_csv(io.StringIO(text), sep=sep)
+
+
+# Short, human-readable allowed-value notes for the instructions sheet.
+_FLIGHT_NOTES = pd.DataFrame({
+    "column": ["flight_id", "airline", "preferred_zone", "aircraft_size",
+               "international", "arrival_min", "departure_min",
+               "occupied_until_min", "passengers"],
+    "required": ["yes", "optional", "yes", "yes", "yes", "yes", "yes", "yes", "yes"],
+    "meaning / allowed values": [
+        "unique id per flight, e.g. F01",
+        "airline code, e.g. TK (free text)",
+        "terminal zone the airline prefers, e.g. A",
+        "narrow OR wide",
+        "0 = domestic, 1 = international",
+        "arrival time as minutes from midnight (e.g. 06:30 -> 390)",
+        "scheduled departure, minutes from midnight",
+        "gate freed at, minutes from midnight (departure + buffer)",
+        "passenger count (integer)",
+    ],
+})
+_GATE_NOTES = pd.DataFrame({
+    "column": ["gate_id", "zone", "gate_type", "max_size",
+               "walking_distance_m", "taxi_penalty_min", "international_capable"],
+    "required": ["yes"] * 7,
+    "meaning / allowed values": [
+        "unique id per gate, e.g. A1",
+        "terminal zone the gate sits in, e.g. A",
+        "contact OR remote",
+        "largest aircraft it accepts: narrow OR wide",
+        "walking distance to the gate in metres",
+        "extra taxi time penalty in minutes",
+        "0 = domestic only, 1 = international capable",
+    ],
+})
+
+
+def _xlsx_template(df: pd.DataFrame, notes: pd.DataFrame, data_sheet: str) -> io.BytesIO:
+    """Build a formatted .xlsx with an example-data sheet + an instructions sheet."""
+    buf = io.BytesIO()
+    with pd.ExcelWriter(buf, engine="openpyxl") as writer:
+        df.to_excel(writer, sheet_name=data_sheet, index=False)
+        notes.to_excel(writer, sheet_name="instructions", index=False)
+        from openpyxl.styles import Font, PatternFill
+        header_fill = PatternFill("solid", fgColor="1F5E7A")
+        header_font = Font(bold=True, color="FFFFFF")
+        for ws in writer.book.worksheets:
+            for cell in ws[1]:
+                cell.fill = header_fill
+                cell.font = header_font
+            # auto-ish column widths
+            for col in ws.columns:
+                width = max((len(str(c.value)) for c in col if c.value is not None), default=10)
+                ws.column_dimensions[col[0].column_letter].width = min(width + 3, 60)
+            ws.freeze_panes = "A2"
+    buf.seek(0)
+    return buf
 
 
 def _validate_flights(df: pd.DataFrame):
@@ -507,14 +570,15 @@ _BTN_STYLE = {
 def _custom_tab():
     return html.Div([
         html.P(
-            "Optimize gate allocation for any airport: download a template, fill in "
-            "your own flights and gates, upload both CSVs, and run all three policies "
-            "(FCFS · Priority Dispatch · MILP).",
+            "Optimize gate allocation for any airport: download an Excel template "
+            "(with an example sheet and an instructions sheet), fill in your own "
+            "flights and gates, upload both files (.xlsx or .csv), and run all three "
+            "policies (FCFS · Priority Dispatch · MILP).",
             style={"color": "#555"},
         ),
         html.Div([
-            html.Button("⬇ Flights template (CSV)", id="dl-flights-btn", style=_BTN_STYLE),
-            html.Button("⬇ Gates template (CSV)", id="dl-gates-btn", style=_BTN_STYLE),
+            html.Button("⬇ Flights template (Excel)", id="dl-flights-btn", style=_BTN_STYLE),
+            html.Button("⬇ Gates template (Excel)", id="dl-gates-btn", style=_BTN_STYLE),
             dcc.Download(id="dl-flights"),
             dcc.Download(id="dl-gates"),
         ], style={"margin": "12px 0"}),
@@ -533,12 +597,12 @@ def _custom_tab():
             html.Div([
                 html.Label("Flights CSV", style={"fontWeight": "bold"}),
                 dcc.Upload(id="upload-flights", multiple=False, style=_UPLOAD_STYLE,
-                           children=html.Div(["Drag & drop or ", html.A("browse")])),
+                           children=html.Div(["Drag & drop or ", html.A("browse"), " (.xlsx / .csv)"])),
             ], style={"flex": "1", "marginRight": "12px"}),
             html.Div([
                 html.Label("Gates CSV", style={"fontWeight": "bold"}),
                 dcc.Upload(id="upload-gates", multiple=False, style=_UPLOAD_STYLE,
-                           children=html.Div(["Drag & drop or ", html.A("browse")])),
+                           children=html.Div(["Drag & drop or ", html.A("browse"), " (.xlsx / .csv)"])),
             ], style={"flex": "1"}),
         ], style={"display": "flex", "margin": "12px 0"}),
         html.Button("▶ Run optimization", id="custom-run",
@@ -659,13 +723,15 @@ def render_tab(tab: str):
 @app.callback(Output("dl-flights", "data"), Input("dl-flights-btn", "n_clicks"),
               prevent_initial_call=True)
 def _download_flights_template(n):
-    return dcc.send_data_frame(_flights_template().to_csv, "flights_template.csv", index=False)
+    buf = _xlsx_template(_flights_template(), _FLIGHT_NOTES, "flights")
+    return dcc.send_bytes(buf.getvalue(), "flights_template.xlsx")
 
 
 @app.callback(Output("dl-gates", "data"), Input("dl-gates-btn", "n_clicks"),
               prevent_initial_call=True)
 def _download_gates_template(n):
-    return dcc.send_data_frame(_gates_template().to_csv, "gates_template.csv", index=False)
+    buf = _xlsx_template(_gates_template(), _GATE_NOTES, "gates")
+    return dcc.send_bytes(buf.getvalue(), "gates_template.xlsx")
 
 
 @app.callback(
@@ -677,15 +743,17 @@ def _download_gates_template(n):
     Input("custom-run", "n_clicks"),
     State("upload-flights", "contents"),
     State("upload-gates", "contents"),
+    State("upload-flights", "filename"),
+    State("upload-gates", "filename"),
     prevent_initial_call=True,
 )
-def _run_custom(n_clicks, flights_contents, gates_contents):
+def _run_custom(n_clicks, flights_contents, gates_contents, flights_name, gates_name):
     blank = (no_update, no_update, no_update, no_update)
     if not flights_contents or not gates_contents:
-        return (*blank, _alert("Please upload both a flights CSV and a gates CSV."))
+        return (*blank, _alert("Please upload both a flights file and a gates file (.xlsx or .csv)."))
     try:
-        fdf = _parse_csv(flights_contents)
-        gdf = _parse_csv(gates_contents)
+        fdf = _parse_upload(flights_contents, flights_name)
+        gdf = _parse_upload(gates_contents, gates_name)
     except Exception as exc:
         return (*blank, _alert(f"Could not read the uploaded files: {exc}"))
 
