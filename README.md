@@ -2,14 +2,21 @@
 
 **A Case Study on Tirana International Airport**
 
+[![Live demo](https://img.shields.io/badge/Live%20demo-onrender.com-1F5E7A?style=for-the-badge)](https://airport-gate-assignment-optimization.onrender.com)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](LICENSE)
+
+🚀 **Live dashboard:** <https://airport-gate-assignment-optimization.onrender.com>
+*(free tier — the first visit may take ~30 s to wake the server)*
+
 A decision-support framework that models airport **gate (stand) assignment** as a
 capacity-allocation problem and compares three policies — a first-come-first-served
 baseline, a passenger-priority heuristic, and a mathematically optimal MILP — across
 cost, passenger walking distance, terminal-zone fit, and robustness to delays.
 
 It ships with an interactive **Plotly Dash** dashboard so the results can be explored
-in the browser — including a **"Bring Your Own Airport"** tab where you can upload your
-own flight and gate tables (CSV) and re-run the full optimization for any airport.
+in the browser — including a **"Bring Your Own Airport"** tab where you can download an
+Excel template, upload your own flight and gate tables (`.xlsx` or `.csv`), and re-run
+the full optimization for any airport.
 
 ---
 
