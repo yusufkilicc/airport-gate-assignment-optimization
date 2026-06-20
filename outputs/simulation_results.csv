@@ -1,0 +1,301 @@
+scenario,method,feasible,total_cost,remote_flights,zone_mismatches,weighted_walk_m,service_ext_min,n_delayed
+0,FCFS,True,58659.1,9.0,19.0,482.57,500.0,7
+0,Priority Dispatch,True,51672.1,9.0,16.0,409.77,494.0,7
+0,Optimized MILP,True,45322.6,7.0,13.0,367.94,428.0,7
+1,FCFS,True,55672.0,8.0,19.0,462.99,478.0,7
+1,Priority Dispatch,True,54415.0,10.0,15.0,425.86,517.0,7
+1,Optimized MILP,True,49084.9,8.0,13.0,396.09,455.0,7
+2,FCFS,True,61575.5,10.0,19.0,504.88,531.0,10
+2,Priority Dispatch,False,,,,,,10
+2,Optimized MILP,True,51271.4,9.0,12.0,411.54,479.0,10
+3,FCFS,True,67498.7,11.0,21.0,557.6,569.0,11
+3,Priority Dispatch,True,57439.7,11.0,16.0,446.09,550.0,11
+3,Optimized MILP,True,54719.4,10.0,12.0,437.85,506.0,11
+4,FCFS,True,60521.4,10.0,16.0,496.59,518.0,7
+4,Priority Dispatch,True,56679.3,11.0,13.0,439.36,537.0,7
+4,Optimized MILP,True,50426.5,9.0,12.0,400.36,478.0,7
+5,FCFS,True,59030.5,9.0,20.0,488.62,509.0,13
+5,Priority Dispatch,True,56935.5,11.0,13.0,444.52,539.0,13
+5,Optimized MILP,True,49364.2,8.0,10.0,406.5,447.0,13
+6,FCFS,True,56636.4,8.0,20.0,471.42,477.0,12
+6,Priority Dispatch,True,46557.1,7.0,15.0,380.21,438.0,12
+6,Optimized MILP,True,41197.9,5.0,13.0,351.69,378.0,12
+7,FCFS,False,,,,,,13
+7,Priority Dispatch,False,,,,,,13
+7,Optimized MILP,False,,,,,,13
+8,FCFS,True,60784.7,10.0,21.0,493.48,543.0,10
+8,Priority Dispatch,True,59493.7,12.0,14.0,460.0,568.0,10
+8,Optimized MILP,True,54547.5,10.0,12.0,435.08,507.0,10
+9,FCFS,True,65530.9,11.0,19.0,538.97,562.0,7
+9,Priority Dispatch,True,57122.6,11.0,15.0,445.3,548.0,7
+9,Optimized MILP,True,56571.8,11.0,10.0,447.35,528.0,7
+10,FCFS,True,62405.5,10.0,20.0,509.81,534.0,8
+10,Priority Dispatch,True,56819.2,11.0,14.0,443.47,543.0,8
+10,Optimized MILP,True,51885.6,9.0,10.0,420.52,473.0,8
+11,FCFS,True,60957.8,9.0,18.0,511.49,501.0,15
+11,Priority Dispatch,True,52067.7,9.0,17.0,414.51,501.0,15
+11,Optimized MILP,True,51431.4,9.0,11.0,414.83,477.0,15
+12,FCFS,True,65900.5,11.0,18.0,540.2,554.0,6
+12,Priority Dispatch,True,57005.6,11.0,14.0,443.15,544.0,6
+12,Optimized MILP,True,54260.3,10.0,10.0,434.98,499.0,6
+13,FCFS,True,57982.0,9.0,18.0,477.67,502.0,13
+13,Priority Dispatch,True,51753.6,9.0,15.0,409.93,491.0,13
+13,Optimized MILP,True,51355.9,9.0,11.0,411.74,476.0,13
+14,FCFS,False,,,,,,3
+14,Priority Dispatch,False,,,,,,3
+14,Optimized MILP,False,,,,,,3
+15,FCFS,True,59463.1,9.0,20.0,489.62,503.0,7
+15,Priority Dispatch,True,52321.4,9.0,17.0,415.11,502.0,7
+15,Optimized MILP,True,45959.2,7.0,14.0,373.93,434.0,7
+16,FCFS,True,63694.0,10.0,19.0,529.41,530.0,7
+16,Priority Dispatch,True,56613.3,11.0,15.0,440.37,543.0,7
+16,Optimized MILP,True,51811.9,9.0,12.0,416.08,480.0,7
+17,FCFS,True,59645.5,9.0,20.0,494.18,510.0,12
+17,Priority Dispatch,True,54398.3,10.0,14.0,427.55,513.0,12
+17,Optimized MILP,True,49332.4,8.0,13.0,397.02,455.0,12
+18,FCFS,True,64539.8,10.0,16.0,541.42,513.0,9
+18,Priority Dispatch,True,51986.9,9.0,17.0,413.4,501.0,9
+18,Optimized MILP,True,46743.7,7.0,12.0,389.76,429.0,9
+19,FCFS,True,65210.7,10.0,20.0,543.77,533.0,11
+19,Priority Dispatch,True,51949.2,9.0,17.0,410.83,500.0,11
+19,Optimized MILP,True,51374.6,9.0,12.0,410.49,479.0,11
+20,FCFS,True,63679.3,10.0,19.0,527.56,528.0,9
+20,Priority Dispatch,True,54029.5,10.0,15.0,424.68,519.0,9
+20,Optimized MILP,True,48731.0,8.0,10.0,397.0,443.0,9
+21,FCFS,True,62203.8,10.0,19.0,515.14,533.0,11
+21,Priority Dispatch,True,54746.2,10.0,16.0,430.13,523.0,11
+21,Optimized MILP,True,51763.6,9.0,13.0,415.55,485.0,11
+22,FCFS,True,61163.6,9.0,20.0,513.36,508.0,10
+22,Priority Dispatch,True,56723.1,11.0,15.0,441.06,545.0,10
+22,Optimized MILP,True,49138.3,8.0,12.0,402.86,453.0,10
+23,FCFS,True,63802.4,10.0,20.0,526.1,535.0,12
+23,Priority Dispatch,True,54087.4,10.0,16.0,422.32,520.0,12
+23,Optimized MILP,True,51116.3,9.0,11.0,410.92,476.0,12
+24,FCFS,True,58612.7,10.0,19.0,467.94,528.0,16
+24,Priority Dispatch,True,51586.6,9.0,14.0,409.56,487.0,16
+24,Optimized MILP,True,47547.5,8.0,11.0,380.49,449.0,16
+25,FCFS,True,61007.3,10.0,18.0,499.0,527.0,14
+25,Priority Dispatch,True,54297.8,10.0,14.0,427.82,515.0,14
+25,Optimized MILP,True,49117.8,8.0,11.0,402.44,448.0,14
+26,FCFS,False,,,,,,15
+26,Priority Dispatch,False,,,,,,15
+26,Optimized MILP,False,,,,,,15
+27,FCFS,True,57841.4,9.0,17.0,477.66,498.0,13
+27,Priority Dispatch,True,54055.9,10.0,14.0,422.85,513.0,13
+27,Optimized MILP,True,51460.4,9.0,10.0,415.51,471.0,13
+28,FCFS,True,61735.4,10.0,17.0,508.85,522.0,9
+28,Priority Dispatch,True,54501.4,10.0,16.0,428.83,524.0,9
+28,Optimized MILP,True,48678.6,8.0,13.0,392.98,455.0,9
+29,FCFS,True,66434.6,11.0,20.0,544.1,561.0,6
+29,Priority Dispatch,True,54340.4,10.0,15.0,426.48,519.0,6
+29,Optimized MILP,True,51486.3,9.0,12.0,412.02,479.0,6
+30,FCFS,True,66747.1,11.0,18.0,553.05,557.0,9
+30,Priority Dispatch,True,59474.9,12.0,13.0,460.84,566.0,9
+30,Optimized MILP,True,56819.1,11.0,10.0,449.1,526.0,9
+31,FCFS,False,,,,,,15
+31,Priority Dispatch,False,,,,,,15
+31,Optimized MILP,False,,,,,,15
+32,FCFS,True,62926.3,10.0,14.0,528.07,511.0,10
+32,Priority Dispatch,True,54255.8,10.0,14.0,428.47,518.0,10
+32,Optimized MILP,True,51472.5,9.0,10.0,415.26,472.0,10
+33,FCFS,True,62573.4,10.0,20.0,513.76,536.0,12
+33,Priority Dispatch,True,57012.0,11.0,15.0,444.2,547.0,12
+33,Optimized MILP,True,51935.0,9.0,11.0,419.27,477.0,12
+34,FCFS,True,61274.4,10.0,19.0,499.92,533.0,12
+34,Priority Dispatch,True,54507.4,10.0,15.0,428.77,519.0,12
+34,Optimized MILP,True,51690.7,9.0,11.0,416.74,475.0,12
+35,FCFS,True,65556.4,11.0,19.0,538.09,559.0,4
+35,Priority Dispatch,True,56980.8,11.0,15.0,444.18,546.0,4
+35,Optimized MILP,True,54391.7,10.0,11.0,433.22,501.0,4
+36,FCFS,True,63672.3,10.0,18.0,528.56,526.0,13
+36,Priority Dispatch,True,52252.9,9.0,16.0,416.09,498.0,13
+36,Optimized MILP,True,51527.5,9.0,12.0,415.05,479.0,13
+37,FCFS,True,60413.7,10.0,17.0,492.37,524.0,8
+37,Priority Dispatch,True,54248.2,10.0,15.0,425.22,519.0,8
+37,Optimized MILP,True,49070.5,8.0,10.0,405.36,446.0,8
+38,FCFS,True,57240.9,9.0,17.0,467.36,497.0,15
+38,Priority Dispatch,True,54108.5,10.0,15.0,423.71,518.0,15
+38,Optimized MILP,True,51171.2,9.0,12.0,407.7,479.0,15
+39,FCFS,False,,,,,,11
+39,Priority Dispatch,False,,,,,,11
+39,Optimized MILP,False,,,,,,11
+40,FCFS,True,66744.9,11.0,18.0,551.78,554.0,8
+40,Priority Dispatch,True,54255.4,10.0,16.0,425.04,519.0,8
+40,Optimized MILP,True,51264.5,9.0,11.0,410.49,476.0,8
+41,FCFS,True,59719.3,9.0,21.0,491.62,512.0,6
+41,Priority Dispatch,True,59514.8,12.0,14.0,459.87,569.0,6
+41,Optimized MILP,True,51588.4,9.0,11.0,415.75,474.0,6
+42,FCFS,True,66898.6,11.0,16.0,558.97,549.0,12
+42,Priority Dispatch,True,56821.6,11.0,15.0,441.17,542.0,12
+42,Optimized MILP,True,53983.4,10.0,11.0,425.56,500.0,12
+43,FCFS,True,66590.8,11.0,17.0,552.82,553.0,10
+43,Priority Dispatch,True,59389.5,12.0,13.0,459.66,566.0,10
+43,Optimized MILP,True,56850.0,11.0,9.0,451.44,522.0,10
+44,FCFS,True,62319.1,10.0,16.0,516.72,517.0,12
+44,Priority Dispatch,True,49505.0,8.0,16.0,398.15,474.0,12
+44,Optimized MILP,True,48748.1,8.0,11.0,396.54,450.0,12
+45,FCFS,False,,,,,,16
+45,Priority Dispatch,False,,,,,,16
+45,Optimized MILP,False,,,,,,16
+46,FCFS,True,63521.7,10.0,15.0,534.32,515.0,14
+46,Priority Dispatch,True,56718.5,11.0,14.0,440.86,540.0,14
+46,Optimized MILP,True,54148.1,10.0,10.0,433.86,498.0,14
+47,FCFS,True,58974.6,9.0,19.0,493.48,508.0,12
+47,Priority Dispatch,True,51825.1,9.0,16.0,410.63,497.0,12
+47,Optimized MILP,True,48973.2,8.0,11.0,400.46,448.0,12
+48,FCFS,True,65292.3,11.0,17.0,536.66,549.0,12
+48,Priority Dispatch,True,51909.8,9.0,14.0,415.22,490.0,12
+48,Optimized MILP,True,51719.7,9.0,12.0,416.46,482.0,12
+49,FCFS,True,57746.4,9.0,17.0,475.12,495.0,17
+49,Priority Dispatch,True,53766.0,10.0,13.0,419.15,507.0,17
+49,Optimized MILP,True,46427.2,7.0,10.0,385.56,418.0,17
+50,FCFS,True,56853.6,9.0,17.0,465.34,495.0,12
+50,Priority Dispatch,False,,,,,,12
+50,Optimized MILP,True,49447.5,8.0,13.0,400.24,457.0,12
+51,FCFS,False,,,,,,11
+51,Priority Dispatch,True,49656.3,8.0,17.0,397.89,473.0,11
+51,Optimized MILP,True,49196.8,8.0,14.0,397.76,460.0,11
+52,FCFS,True,58501.7,9.0,14.0,489.19,482.0,15
+52,Priority Dispatch,True,49062.0,8.0,16.0,392.48,467.0,15
+52,Optimized MILP,True,46215.5,7.0,14.0,375.8,432.0,15
+53,FCFS,True,56914.8,9.0,18.0,465.5,502.0,13
+53,Priority Dispatch,True,54585.8,10.0,16.0,429.57,525.0,13
+53,Optimized MILP,True,51136.2,9.0,11.0,411.2,476.0,13
+54,FCFS,True,62997.3,10.0,16.0,524.38,515.0,13
+54,Priority Dispatch,True,51944.5,9.0,17.0,409.53,497.0,13
+54,Optimized MILP,True,47561.1,8.0,13.0,377.24,456.0,13
+55,FCFS,True,63634.7,10.0,18.0,529.28,529.0,7
+55,Priority Dispatch,True,54625.6,10.0,16.0,428.88,522.0,7
+55,Optimized MILP,True,54059.9,10.0,11.0,428.67,501.0,7
+56,FCFS,True,64028.4,10.0,18.0,537.15,529.0,5
+56,Priority Dispatch,True,59389.5,12.0,13.0,459.66,566.0,5
+56,Optimized MILP,True,54410.7,10.0,11.0,433.48,501.0,5
+57,FCFS,True,62776.6,10.0,18.0,522.45,529.0,14
+57,Priority Dispatch,False,,,,,,14
+57,Optimized MILP,True,54281.6,10.0,11.0,431.71,501.0,14
+58,FCFS,False,,,,,,15
+58,Priority Dispatch,False,,,,,,15
+58,Optimized MILP,False,,,,,,15
+59,FCFS,True,63610.3,10.0,16.0,534.02,518.0,9
+59,Priority Dispatch,True,51989.9,9.0,16.0,412.89,497.0,9
+59,Optimized MILP,True,48937.9,8.0,11.0,399.15,450.0,9
+60,FCFS,False,,,,,,10
+60,Priority Dispatch,False,,,,,,10
+60,Optimized MILP,False,,,,,,10
+61,FCFS,True,64013.1,10.0,20.0,530.63,537.0,9
+61,Priority Dispatch,True,54655.0,10.0,16.0,427.23,521.0,9
+61,Optimized MILP,True,51534.5,9.0,12.0,411.04,477.0,9
+62,FCFS,True,64659.7,10.0,17.0,541.15,517.0,10
+62,Priority Dispatch,True,49270.5,8.0,15.0,400.14,468.0,10
+62,Optimized MILP,True,46402.7,7.0,13.0,382.34,429.0,10
+63,FCFS,True,67397.7,11.0,16.0,558.4,543.0,11
+63,Priority Dispatch,True,54638.4,10.0,15.0,431.8,522.0,11
+63,Optimized MILP,True,51714.3,9.0,11.0,417.89,479.0,11
+64,FCFS,True,64388.8,10.0,18.0,535.51,521.0,14
+64,Priority Dispatch,True,48677.8,8.0,17.0,386.53,474.0,14
+64,Optimized MILP,True,45232.5,7.0,11.0,369.72,422.0,14
+65,FCFS,False,,,,,,10
+65,Priority Dispatch,False,,,,,,10
+65,Optimized MILP,False,,,,,,10
+66,FCFS,True,61291.5,10.0,16.0,506.74,519.0,8
+66,Priority Dispatch,True,54301.7,10.0,15.0,428.42,519.0,8
+66,Optimized MILP,True,51288.3,9.0,10.0,411.09,470.0,8
+67,FCFS,True,58806.8,9.0,15.0,488.98,486.0,15
+67,Priority Dispatch,True,51695.3,9.0,14.0,410.22,489.0,15
+67,Optimized MILP,True,49069.9,8.0,10.0,403.29,445.0,15
+68,FCFS,True,57200.7,9.0,22.0,462.15,517.0,15
+68,Priority Dispatch,True,52059.6,9.0,16.0,410.15,494.0,15
+68,Optimized MILP,True,47926.6,8.0,13.0,382.26,456.0,15
+69,FCFS,False,,,,,,9
+69,Priority Dispatch,False,,,,,,9
+69,Optimized MILP,False,,,,,,9
+70,FCFS,True,55193.0,8.0,20.0,456.97,482.0,12
+70,Priority Dispatch,True,51496.2,9.0,15.0,407.22,489.0,12
+70,Optimized MILP,True,48607.5,8.0,11.0,393.38,447.0,12
+71,FCFS,True,67368.2,11.0,16.0,562.53,544.0,11
+71,Priority Dispatch,True,49828.0,8.0,18.0,401.62,481.0,11
+71,Optimized MILP,True,49049.8,8.0,12.0,400.41,456.0,11
+72,FCFS,True,58969.0,9.0,21.0,484.21,511.0,10
+72,Priority Dispatch,True,54666.2,10.0,16.0,429.03,523.0,10
+72,Optimized MILP,True,48901.9,8.0,11.0,397.42,447.0,10
+73,FCFS,True,55284.7,8.0,18.0,460.01,473.0,14
+73,Priority Dispatch,True,51597.2,9.0,16.0,409.15,493.0,14
+73,Optimized MILP,True,48616.4,8.0,11.0,393.5,447.0,14
+74,FCFS,True,57613.0,9.0,16.0,475.62,490.0,13
+74,Priority Dispatch,True,54717.0,10.0,15.0,430.82,521.0,13
+74,Optimized MILP,True,46668.5,7.0,11.0,390.65,425.0,13
+75,FCFS,True,62309.6,10.0,19.0,512.48,531.0,10
+75,Priority Dispatch,True,56718.5,11.0,14.0,440.86,540.0,10
+75,Optimized MILP,True,50404.8,9.0,12.0,400.48,477.0,10
+76,FCFS,True,57003.9,8.0,19.0,478.79,478.0,9
+76,Priority Dispatch,True,51775.4,9.0,15.0,411.87,493.0,9
+76,Optimized MILP,True,46630.0,7.0,12.0,386.56,427.0,9
+77,FCFS,True,64159.3,10.0,17.0,536.75,517.0,10
+77,Priority Dispatch,True,49202.2,8.0,17.0,392.9,470.0,10
+77,Optimized MILP,True,42563.2,6.0,15.0,346.82,410.0,10
+78,FCFS,True,60572.8,10.0,17.0,494.96,523.0,8
+78,Priority Dispatch,True,54409.9,10.0,15.0,426.2,516.0,8
+78,Optimized MILP,True,51413.9,9.0,12.0,411.85,477.0,8
+79,FCFS,False,,,,,,9
+79,Priority Dispatch,False,,,,,,9
+79,Optimized MILP,False,,,,,,9
+80,FCFS,True,54945.9,8.0,19.0,453.85,476.0,13
+80,Priority Dispatch,True,49800.1,8.0,18.0,399.18,480.0,13
+80,Optimized MILP,True,43850.3,6.0,12.0,369.41,400.0,13
+81,FCFS,False,,,,,,14
+81,Priority Dispatch,False,,,,,,14
+81,Optimized MILP,False,,,,,,14
+82,FCFS,True,53893.2,8.0,19.0,440.65,479.0,14
+82,Priority Dispatch,True,51991.6,9.0,16.0,411.27,495.0,14
+82,Optimized MILP,True,48990.0,8.0,13.0,396.84,456.0,14
+83,FCFS,True,58368.5,9.0,19.0,481.46,505.0,7
+83,Priority Dispatch,True,56737.4,11.0,15.0,439.61,543.0,7
+83,Optimized MILP,True,49005.5,8.0,11.0,400.9,448.0,7
+84,FCFS,False,,,,,,6
+84,Priority Dispatch,False,,,,,,6
+84,Optimized MILP,False,,,,,,6
+85,FCFS,False,,,,,,7
+85,Priority Dispatch,False,,,,,,7
+85,Optimized MILP,False,,,,,,7
+86,FCFS,False,,,,,,10
+86,Priority Dispatch,False,,,,,,10
+86,Optimized MILP,False,,,,,,10
+87,FCFS,False,,,,,,11
+87,Priority Dispatch,False,,,,,,11
+87,Optimized MILP,False,,,,,,11
+88,FCFS,True,61986.9,10.0,21.0,508.33,541.0,13
+88,Priority Dispatch,True,54380.8,10.0,15.0,427.45,518.0,13
+88,Optimized MILP,True,51605.2,9.0,11.0,415.16,476.0,13
+89,FCFS,True,61259.8,10.0,17.0,504.39,523.0,13
+89,Priority Dispatch,True,50104.9,9.0,13.0,392.8,485.0,13
+89,Optimized MILP,True,49971.1,9.0,12.0,392.88,481.0,13
+90,FCFS,False,,,,,,13
+90,Priority Dispatch,False,,,,,,13
+90,Optimized MILP,False,,,,,,13
+91,FCFS,False,,,,,,14
+91,Priority Dispatch,False,,,,,,14
+91,Optimized MILP,False,,,,,,14
+92,FCFS,True,61984.7,10.0,16.0,513.78,519.0,9
+92,Priority Dispatch,True,54258.4,10.0,14.0,429.33,516.0,9
+92,Optimized MILP,True,48982.9,8.0,10.0,402.51,444.0,9
+93,FCFS,True,59497.7,9.0,18.0,498.46,502.0,14
+93,Priority Dispatch,True,54405.6,10.0,15.0,427.37,519.0,14
+93,Optimized MILP,True,51413.8,9.0,13.0,409.52,482.0,14
+94,FCFS,True,63230.4,10.0,17.0,525.25,520.0,14
+94,Priority Dispatch,True,52054.7,9.0,18.0,410.35,504.0,14
+94,Optimized MILP,True,48057.5,8.0,14.0,386.25,462.0,14
+95,FCFS,True,63549.9,10.0,17.0,527.16,520.0,10
+95,Priority Dispatch,True,50842.2,9.0,15.0,397.42,491.0,10
+95,Optimized MILP,True,47776.2,8.0,10.0,385.96,444.0,10
+96,FCFS,False,,,,,,10
+96,Priority Dispatch,False,,,,,,10
+96,Optimized MILP,False,,,,,,10
+97,FCFS,True,65981.8,11.0,16.0,545.57,545.0,3
+97,Priority Dispatch,True,54572.4,10.0,16.0,429.39,525.0,3
+97,Optimized MILP,True,51681.3,9.0,11.0,417.03,474.0,3
+98,FCFS,True,61920.5,10.0,15.0,514.41,516.0,9
+98,Priority Dispatch,True,56949.5,11.0,14.0,442.79,543.0,9
+98,Optimized MILP,True,51604.6,9.0,10.0,417.07,472.0,9
+99,FCFS,True,64412.0,11.0,16.0,530.62,547.0,11
+99,Priority Dispatch,True,59283.2,12.0,14.0,457.52,567.0,11
+99,Optimized MILP,True,51973.1,9.0,11.0,418.97,473.0,11

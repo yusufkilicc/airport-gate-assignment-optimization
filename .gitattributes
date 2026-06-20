@@ -1,0 +1,10 @@
+# Normalize line endings: keep LF in the repo so shell scripts, Procfile and
+# Dockerfile work correctly on the Linux deploy hosts.
+* text=auto eol=lf
+
+# Treat figures/binaries as binary
+*.png binary
+*.pdf binary
+*.pptx binary
+*.docx binary
+*.xlsx binary

@@ -1,0 +1,14 @@
+# Runtime dependencies for the analysis pipeline and the Dash dashboard.
+# Pinned to the versions the project was developed and tested against.
+pandas==3.0.2
+numpy==2.4.4
+scipy==1.17.1
+networkx==3.6.1
+pulp==3.3.0
+matplotlib==3.10.8
+seaborn==0.13.2
+plotly==6.7.0
+dash==4.1.0
+
+# Production WSGI server (Render / Hugging Face / any prod host)
+gunicorn==23.0.0

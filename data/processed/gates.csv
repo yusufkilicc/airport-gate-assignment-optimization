@@ -1,0 +1,12 @@
+gate_id,zone,gate_type,max_size,walking_distance_m,taxi_penalty_min,international_capable
+A1,A,contact,wide,170,5,1
+A2,A,contact,narrow,230,6,1
+B1,B,contact,wide,180,4,1
+B2,B,contact,narrow,240,5,1
+C1,C,contact,narrow,280,7,0
+C2,C,contact,narrow,320,7,1
+D1,D,contact,narrow,260,6,1
+R1,REMOTE,remote,wide,920,14,1
+R2,REMOTE,remote,wide,980,15,1
+R3,REMOTE,remote,wide,1050,16,1
+R4,REMOTE,remote,wide,1110,17,1

@@ -1,0 +1,12 @@
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+.git/
+.gitignore
+Final-Project-/
+REPORT_QA_BANK_FINAL_PRESENTATION.md
+*.pdf
+*.pptx
+*.docx
+*.xlsx

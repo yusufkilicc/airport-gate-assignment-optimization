@@ -1,0 +1,5 @@
+solution,total_assignment_cost,remote_flights,contact_gate_share,weighted_avg_walking_m,weighted_passenger_distance_km,zone_mismatch_flights,narrow_on_wide_gates,total_expected_service_extension_min,max_gate_utilization_pct,scenario
+Baseline FCFS,66649.0,11,69.44,550.19,4010.9,19,8,560,53.41,normal
+Optimized MILP,56850.0,11,69.44,451.44,3291.0,9,1,522,51.68,normal
+Baseline FCFS,60737.2,9,75.0,504.63,3678.72,20,11,503,65.97,disruption
+Optimized MILP,44211.5,6,83.33,371.21,2706.15,13,2,407,62.68,disruption
