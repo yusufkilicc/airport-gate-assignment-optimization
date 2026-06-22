@@ -34,7 +34,7 @@ On top of the three policies the pipeline runs:
 - **Robustness simulation** — 100 random delay scenarios, comparing how each policy degrades.
 - **Scenario analysis** — normal / heavy / disruption operating days.
 
-## Headline results (synthetic case)
+## Headline results 
 
 Compared with the FCFS baseline, the optimized MILP:
 
@@ -84,7 +84,7 @@ or **Hugging Face Spaces** (`Dockerfile`). Step-by-step instructions for both ar
 
 ```
 src/
-  project_data.py     synthetic flight & gate generator (seeded)
+  project_data.py     flight & gate generator (seeded)
   project_model.py    cost model, compatibility, FCFS / Priority / MILP solvers
   sensitivity.py      cost-weight parameter sweeps
   simulation.py       100-scenario stochastic robustness study
